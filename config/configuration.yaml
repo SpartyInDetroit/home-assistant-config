@@ -19,5 +19,11 @@ homekit:
 
 input_boolean:
   backdoor_august_lock:
-    name: Backdoor August Lock
+    name: Back Door August Lock
+    icon: mdi:home-lock  
+  side_door_august_lock:
+    name: Side Door August Lock
+    icon: mdi:home-lock
+  front_door_august_lock:
+    name: Front Door August Lock
     icon: mdi:home-lock
