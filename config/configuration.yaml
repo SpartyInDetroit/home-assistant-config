@@ -8,6 +8,7 @@ tts:
 
 group: !include groups.yaml
 automation: !include automations.yaml
+automation split: !include_dir_list ./automations
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
@@ -27,3 +28,13 @@ input_boolean:
   front_door_august_lock:
     name: Front Door August Lock
     icon: mdi:home-lock
+
+light:
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.living_room_light_1
+      - light.living_room_light_2
+      - light.living_room_light_3
+      - light.living_room_light_4
+
