@@ -1,0 +1,18 @@
+alias: Dining Room Lights On
+description: >-
+  Turn dining room lights on.
+
+  Automation is triggered via motion sensor and lights will turn on when it''s night
+  time or there is not enough light outside.
+
+  Lights turn off after 5 minutes of no motion.
+
+id: 52416337-b2f5-414d-886a-2648de312ea9
+
+use_blueprint:
+  path: motion_light.yaml
+  input:
+    motion_entity: binary_sensor.dining_room_motion_sensor
+    light_target:
+      entity_id: light.dining_room_lights
+    no_motion_wait: 300
