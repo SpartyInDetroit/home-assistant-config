@@ -3,4 +3,4 @@
 # List of entities that is exposed to HomeKit/Siri
 # From area: Things that don't belong in any specific area
 #
-- alarm_control_panel.iota_b0c5ca3b5f00
+- alarm_control_panel.abode_alarm
