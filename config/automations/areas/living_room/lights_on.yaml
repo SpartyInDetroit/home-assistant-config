@@ -1,4 +1,3 @@
-
 alias: Living Room Lights On
 description: >-
   Turn living room lights on.
@@ -6,41 +5,14 @@ description: >-
   Automation is triggered via motion sensor and lights will turn on when it''s night
   time or there is not enough light outside.
 
-  The lights will turn off if no motion is detected 5 minutes after motion is clear.
-id: 8d54d34c-5306-4e60-974e-722fe5136531
-mode: restart
+  Lights turn off after 5 minutes of no motion.
 
-trigger:
-  - platform: state
-    entity_id: binary_sensor.living_room_motion_sensor
-    to: "on"
-condition:
-  - condition: or
-    conditions:
-      - condition: sun
-        after: sunset
-        after_offset: -00:30:00
-        before: sunrise
-        before_offset: 00:30:00
-      - condition: state
-        entity_id: light.kitchen_light_1
-        state: "on"
-      - condition: numeric_state
-        entity_id: sensor.kitchen_motion_sensor_light_level
-        below: 50
-action:
-  - service: light.turn_on
-    target:
+id: 8d54d34c-5306-4e60-974e-722fe5136531
+
+use_blueprint:
+  path: motion_light.yaml
+  input:
+    motion_entity: binary_sensor.living_room_motion_sensor
+    light_target:
       entity_id: light.living_room_lights
-  - wait_for_trigger:
-      - platform: state
-        entity_id: binary_sensor.living_room_motion_sensor
-        to: "off"
-  - delay: 
-      hours: 0
-      minutes: 5
-      seconds: 0
-      milliseconds: 0
-  - service: light.turn_off
-    target:
-      entity_id: light.living_room_lights
+    no_motion_wait: 300

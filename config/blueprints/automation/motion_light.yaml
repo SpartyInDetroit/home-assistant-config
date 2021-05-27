@@ -1,8 +1,10 @@
 blueprint:
   name: Motion-activated Light
-  description: Turn on a light when motion is detected.
+  description: >-
+    Turn on a light when motion is detected.
+
+    Lights turn off after a period of no motion.
   domain: automation
-  source_url: https://github.com/home-assistant/core/blob/dev/homeassistant/components/automation/blueprints/motion_light.yaml
   input:
     motion_entity:
       name: Motion Sensor
@@ -25,6 +27,15 @@ blueprint:
           min: 0
           max: 3600
           unit_of_measurement: seconds
+    # always_run:
+    #   name: Always run
+    #   description: Ignore conditions
+    #   default: false
+    #   selector:
+    #     boolean:
+
+# variable:
+#   always_run: !input always_run
 
 # If motion is detected within the delay,
 # we restart the script.
@@ -36,6 +47,23 @@ trigger:
   entity_id: !input motion_entity
   from: "off"
   to: "on"
+
+condition:
+  - condition: or
+    conditions:
+      # - condition: template
+      #   value_template: "{{ always_run }}"
+      - condition: template
+        alias: "Sun down"
+        value_template: "{{ state_attr('sun.sun', 'elevation') < 4 }}"
+      - condition: state
+        alias: "Kitchen Light is On" # in case it's dark outside and the kitchen light is turned on
+        entity_id: light.kitchen_light_1
+        state: "on"
+      - condition: numeric_state
+        alias: "Ambient light is low"
+        entity_id: sensor.kitchen_motion_sensor_light_level
+        below: 25
 
 action:
   - alias: "Turn on the light"
