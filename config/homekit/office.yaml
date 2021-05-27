@@ -6,4 +6,4 @@
 - binary_sensor.office_window
 - binary_sensor.back_door
 - binary_sensor.office_motion_sensor
-- input_boolean.backdoor_august_lock
+- input_boolean.back_door_august_lock

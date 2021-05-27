@@ -4,3 +4,4 @@
 # From area: Front Door
 #
 - binary_sensor.front_door
+- input_boolean.front_door_august_lock
