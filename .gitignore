@@ -1,0 +1,12 @@
+# Generic ignores
+*.log
+*.db
+*.db-shm
+*.db-wal
+*.pyc
+._*
+__pycache__
+*.pickle
+
+.storage
+config/custom_components/*

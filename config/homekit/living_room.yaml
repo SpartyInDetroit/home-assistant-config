@@ -1,0 +1,8 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# From area: Living Room
+#
+- binary_sensor.living_room_front_window
+- binary_sensor.living_room_side_window
+- binary_sensor.living_room_motion_sensor

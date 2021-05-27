@@ -1,0 +1,7 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# From area: Basement
+#
+- binary_sensor.iota_b0c5ca3b5f00
+- camera.iota_b0c5ca3b5f00
