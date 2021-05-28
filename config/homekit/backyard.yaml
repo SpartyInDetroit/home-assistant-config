@@ -1,0 +1,6 @@
+---
+#
+# List of entities that is exposed to HomeKit/Siri
+# From area: Backyard
+#
+- switch.outdoor_switch_00601737

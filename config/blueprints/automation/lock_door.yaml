@@ -1,0 +1,48 @@
+blueprint:
+  name: Lock Door
+  description: Lock door if door has been closed for a period of time.
+  domain: automation
+  input:
+    contact_sensor:
+      name: Contact Sensor
+      description: Door contact sensor so we know the door is closed.
+      selector:
+        entity:
+          domain: binary_sensor
+          device_class: door
+    door_lock:
+      name: Door Lock
+      description: The door lock we want to control
+      selector:
+        entity:
+          domain: input_boolean
+    wait_time:
+      name: Wait time
+      description: Time to wait in case door is opened again.
+      default: 60
+      selector:
+        number:
+          min: 0
+          max: 3600
+          unit_of_measurement: seconds
+
+mode: restart
+max_exceeded: silent
+
+trigger:
+  platform: state
+  entity_id: !input contact_sensor
+  from: "on"
+  to: "off"
+  for: !input wait_time
+
+action:
+  - alias: "Reset input boolean just in case"
+    service: input_boolean.turn_off
+    target:
+      entity_id: !input door_lock
+  - delay: "00:00:05"
+  - alias: "Lock the door"
+    service: input_boolean.turn_on
+    target:
+      entity_id: !input door_lock
