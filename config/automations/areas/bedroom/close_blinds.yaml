@@ -1,0 +1,21 @@
+alias: Bedroom Close Blinds
+description: Close blinds at dusk.
+
+id: 3189539f-0c98-48fd-b825-9afec4fd7599
+
+trigger:
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 4.0
+  
+action:
+  - alias: "Close blinds"
+    service: cover.close_cover
+    target:
+      entity_id:
+        - cover.tradfri_blind_2
+        - cover.tradfri_blind_3
+        - cover.tradfri_blind_4
+        - cover.tradfri_blind_5
+      

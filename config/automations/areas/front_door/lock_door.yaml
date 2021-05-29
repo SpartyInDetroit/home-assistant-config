@@ -1,4 +1,4 @@
-alias: Lock Front Door
+alias: Front Door Lock
 description: >-
   Lock the front door if it remains closed for 30 seconds
 

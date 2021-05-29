@@ -1,0 +1,29 @@
+alias: Bedroom Open Blinds
+description: Open blinds in the morning.
+
+id: 26763587-A0AE-4720-94BE-63ED73D17E86
+
+trigger:
+  - platform: time
+    at: "08:30:00"
+
+condition:
+  alias: "Weekdays"
+  condition: time
+  weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+
+action:
+  - alias: "Open blinds"
+    service: cover.open_cover
+    target:
+      entity_id:
+        - cover.tradfri_blind_2
+        - cover.tradfri_blind_3
+        - cover.tradfri_blind_4
+        - cover.tradfri_blind_5
+      
