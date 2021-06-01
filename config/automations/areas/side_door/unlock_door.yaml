@@ -1,0 +1,21 @@
+alias: Side Door Unlock
+description: Unlock the side door when phones connect to wifi.
+
+id: 16620edc-2a4a-45b6-8a70-867947e69eac
+
+trigger:
+  - platform: state
+    entity_id:
+      - binary_sensor.swifi_angies_iphone_wireless_connected
+      - binary_sensor.swifi_angies_iphone_wireless_connected_2
+      - binary_sensor.swifi_nicolesiphonexr_wireless_connected
+      - binary_sensor.swifi_ryans_iphone_wireless_connected
+    from: "off"
+    to: "on"
+  
+action:
+  - alias: "Unlock side door"
+    service: lock.unlock
+    target:
+      entity_id: lock.side_door    
+      
