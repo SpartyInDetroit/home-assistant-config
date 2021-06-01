@@ -7,6 +7,7 @@
 ._*
 __pycache__
 *.pickle
+*.conf
 
 .storage
 config/custom_components/*

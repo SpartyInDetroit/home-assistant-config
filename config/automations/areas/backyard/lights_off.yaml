@@ -1,0 +1,35 @@
+alias: Backyard Lights Off
+description: >-
+  Turn off string lights first and then wait 5 minutes to turn off
+  back door light.
+
+  Automation is triggered when back door is locked.
+
+id: f158aa04-8252-43f2-96a8-9575da8fb8da
+
+mode: restart
+max_exceeded: silent
+
+trigger:
+  platform: state
+  entity_id: input_boolean.back_door_august_lock
+  from: "off"
+  to: "on"
+
+action:
+  - alias: "Turn off string lights"
+    service: switch.turn_off
+    target:
+      entity_id: switch.outdoor_switch_00601737
+  - delay:
+      minutes: 5
+  - alias: "Ensure string lights have been off for 5 minutes"
+    condition: state
+    entity_id: switch.outdoor_switch_00601737
+    state: "off"
+    for:
+      minutes: 5
+  - alias: "Turn off back door light"
+    service: light.turn_off
+    target:
+      entity_id: light.back_door_light

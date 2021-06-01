@@ -1,0 +1,29 @@
+alias: Back Door Lock
+description: >-
+  Lock the back door if it remains closed for 5 minutes
+
+id: 8f79a5f6-ea6b-4e49-bcd2-647f0791677e
+
+trigger:
+  platform: state
+  entity_id: binary_sensor.back_door
+  from: "on"
+  to: "off"
+  for: 300
+
+condition:
+  alias: "From 11pm to 8am"
+  condition: time
+  after: "23:00:00"
+  before: "08:00:00"
+
+action:
+  - alias: "Reset input boolean just in case"
+    service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.back_door_august_lock
+  - delay: "00:00:05"
+  - alias: "Lock the door"
+    service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.back_door_august_lock

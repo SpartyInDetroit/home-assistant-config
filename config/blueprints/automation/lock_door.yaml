@@ -15,7 +15,7 @@ blueprint:
       description: The door lock we want to control
       selector:
         entity:
-          domain: input_boolean
+          domain: lock
     wait_time:
       name: Wait time
       description: Time to wait in case door is opened again.
@@ -37,12 +37,7 @@ trigger:
   for: !input wait_time
 
 action:
-  - alias: "Reset input boolean just in case"
-    service: input_boolean.turn_off
-    target:
-      entity_id: !input door_lock
-  - delay: "00:00:05"
   - alias: "Lock the door"
-    service: input_boolean.turn_on
+    service: lock.lock
     target:
       entity_id: !input door_lock

@@ -8,5 +8,5 @@ use_blueprint:
   path: lock_door.yaml
   input:
     contact_sensor: binary_sensor.side_door
-    door_lock: input_boolean.side_door_august_lock
-    wait_time: 55
+    door_lock: lock.side_door
+    wait_time: 60
