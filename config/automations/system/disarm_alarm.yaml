@@ -1,0 +1,21 @@
+alias: Alarm Disarm
+description: >-
+  Disarm the alarm when someone comes home.
+
+id: 3a4c5d50-633d-49f2-8421-a65c6035aff0
+
+mode: parallel
+
+trigger:
+  - platform: state
+    entity_id:
+      - person.ryan
+      - person.nicole
+      - person.angeline
+    to: "home"
+  
+action:
+  - alias: "Disarm alarm"
+    service: alarm_control_panel.alarm_disarm
+    target:
+      entity_id: alarm_control_panel.abode_alarm
