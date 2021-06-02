@@ -1,5 +1,5 @@
 blueprint:
-  name: Lock Door
+  name: Close Door Lock
   description: Lock door if door has been closed for a period of time.
   domain: automation
   input:

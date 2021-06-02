@@ -8,13 +8,10 @@ mode: parallel
 trigger:
   - platform: state
     entity_id:
-      - binary_sensor.swifi_angies_iphone_wireless_connected
-      - binary_sensor.swifi_angies_iphone_wireless_connected_2
-      - binary_sensor.swifi_nicolesiphonexr_wireless_connected
-      - binary_sensor.swifi_nicolesplewatch_wireless_connected
-      - binary_sensor.swifi_ryans_iphone_wireless_connected
-    from: "off"
-    to: "on"
+      - person.ryan
+      - person.nicole
+      - person.angeline
+    to: "home"
   
 action:
   - alias: "Unlock side door"

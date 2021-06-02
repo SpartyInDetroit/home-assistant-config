@@ -1,0 +1,30 @@
+alias: Side Door Away Lock
+description: >-
+  Lock the front door if everyone leaves
+
+id: 12e745aa-ce63-41e8-899f-54573aa614ad
+
+mode: queued
+
+trigger:
+  - platform: state
+    entity_id:
+      - person.ryan
+      - person.nicole
+      - person.angeline
+    to: "away"
+
+condition:
+  condition: state
+  entity_id:
+    - person.ryan
+    - person.nicole
+    - person.angeline
+  state: "away"
+  
+action:
+  - alias: "Lock door"
+    service: lock.lock
+    target:
+      entity_id: lock.side_door
+      

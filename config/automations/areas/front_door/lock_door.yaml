@@ -5,7 +5,7 @@ description: >-
 id: fcf890ea-ed16-4da6-b586-6084b10c2266
 
 use_blueprint:
-  path: lock_door.yaml
+  path: close_door_lock.yaml
   input:
     contact_sensor: binary_sensor.front_door
     door_lock: lock.front_door
