@@ -3,6 +3,8 @@ description: Close blinds at dusk.
 
 id: 3189539f-0c98-48fd-b825-9afec4fd7599
 
+mode: single
+
 trigger:
   - platform: numeric_state
     entity_id: sun.sun

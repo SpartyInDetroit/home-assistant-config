@@ -3,6 +3,8 @@ description: Open blinds in the morning.
 
 id: 26763587-A0AE-4720-94BE-63ED73D17E86
 
+mode: single
+
 trigger:
   - platform: time
     at: "08:30:00"

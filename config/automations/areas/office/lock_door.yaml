@@ -4,6 +4,8 @@ description: >-
 
 id: 8f79a5f6-ea6b-4e49-bcd2-647f0791677e
 
+mode: restart
+
 trigger:
   platform: state
   entity_id: binary_sensor.back_door
