@@ -1,0 +1,17 @@
+alias: Front Door Light Off
+description: >-
+  Lock the front door if everyone leaves
+
+id: 3b4f0aaf-08d1-4871-8f28-ffbc4bd02f07
+
+mode: single
+
+trigger:
+  - platform: time
+    at: "02:30:00"
+  
+action:
+  - alias: "Front door light off"
+    service: light.turn_off
+    target:
+      entity_id: light.front_door_light

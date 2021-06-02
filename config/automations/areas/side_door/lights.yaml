@@ -1,0 +1,47 @@
+alias: Side Door Lights On/Off
+description: >-
+  Turn on lights when door unlocks.
+
+  When door locks, wait 1 minute to turn off the inside light and 5 minutes to turn off the outside light.
+
+  Automation is triggered when back door is unlocked.
+
+id: 47358f5a-d74c-4e6b-8f32-816c76a3bbf3
+
+mode: restart
+max_exceeded: silent
+
+trigger:
+  platform: state
+  entity_id: lock.side_door
+  to: "unlocked"
+
+condition:
+  condition: template
+  alias: "Sun down"
+  value_template: "{{ state_attr('sun.sun', 'elevation') < 4 }}"
+
+action:
+  - alias: "Turn on lights"
+    service: light.turn_on
+    target:
+      entity_id:
+        - light.side_door_light
+        - light.side_vestibule_light
+  - alias: "Wait until door locks"
+    wait_for_trigger:
+      - platform: state
+        entity_id: lock.side_door
+        to: "locked"
+  - delay:
+      minutes: 1
+  - alias: "Turn off inside light"
+    service: light.turn_off
+    target:
+      entity_id: light.side_vestibule_light
+  - delay:
+      minutes: 4
+  - alias: "Turn off outside light"
+    service: light.turn_off
+    target:
+      entity_id: light.side_door_light

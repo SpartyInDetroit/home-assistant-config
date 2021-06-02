@@ -1,0 +1,18 @@
+alias: Front Door Light On
+description: >-
+  Lock the front door if everyone leaves
+
+id: 8d9ac402-3317-444c-8a25-087d982799aa
+
+mode: single
+
+trigger:
+  - platform: sun
+    event: sunset
+    offset: "-00:15:00"
+  
+action:
+  - alias: "Front door light on"
+    service: light.turn_on
+    target:
+      entity_id: light.front_door_light
