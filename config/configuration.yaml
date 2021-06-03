@@ -21,7 +21,11 @@ homekit:
 input_boolean:
   backdoor_august_lock:
     name: Back Door August Lock
-    icon: mdi:home-lock  
+    icon: mdi:home-lock 
+  person_arrives:
+    name: Person Arrives
+  last_person_leaves:
+    name: Last Person Leaves
 
 light:
   - platform: group

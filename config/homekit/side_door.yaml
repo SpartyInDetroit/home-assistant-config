@@ -4,4 +4,3 @@
 # From area: Side Door
 #
 - binary_sensor.side_door
-- input_boolean.side_door_august_lock

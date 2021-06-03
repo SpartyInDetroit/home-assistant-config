@@ -4,3 +4,5 @@
 # From area: Things that don't belong in any specific area
 #
 - alarm_control_panel.abode_alarm
+- input_boolean.person_arrives
+- input_boolean.last_person_leaves

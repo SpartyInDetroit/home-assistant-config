@@ -4,26 +4,20 @@ description: >-
 
 id: 8f0ae849-1e51-4976-ba1f-0fe09bdeaf4a
 
-mode: queued
+mode: single
 
 trigger:
   - platform: state
-    entity_id:
-      - person.ryan
-      - person.nicole
-      - person.angeline
-    to: "away"
-
-condition:
-  condition: state
-  entity_id:
-    - person.ryan
-    - person.nicole
-    - person.angeline
-  state: "away"
+    entity_id: input_boolean.last_person_leaves
+    to: "on"
   
 action:
   - alias: "Arm alarm"
     service: alarm_control_panel.alarm_arm_away
     target:
       entity_id: alarm_control_panel.abode_alarm
+  - alias: "Reset helper"
+    service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.last_person_leaves  
+      

@@ -4,27 +4,20 @@ description: >-
 
 id: 3e1b1531-d9ad-44d6-a94f-fb72c90b2442
 
-mode: queued
+mode: single
 
 trigger:
   - platform: state
-    entity_id:
-      - person.ryan
-      - person.nicole
-      - person.angeline
-    to: "away"
-
-condition:
-  condition: state
-  entity_id:
-    - person.ryan
-    - person.nicole
-    - person.angeline
-  state: "away"
+    entity_id: input_boolean.last_person_leaves
+    to: "on"
   
 action:
   - alias: "Lock door"
     service: input_boolean.turn_on
     target:
       entity_id: input_boolean.back_door_august_lock
+  - alias: "Reset helper"
+    service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.last_person_leaves   
       
