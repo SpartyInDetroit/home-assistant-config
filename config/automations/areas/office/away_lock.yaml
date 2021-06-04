@@ -13,9 +13,9 @@ trigger:
   
 action:
   - alias: "Lock door"
-    service: input_boolean.turn_on
+    service: lock.lock
     target:
-      entity_id: input_boolean.back_door_august_lock
+      entity_id: lock.back_door
   - alias: "Reset helper"
     service: input_boolean.turn_off
     target:

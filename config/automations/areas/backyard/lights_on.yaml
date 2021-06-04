@@ -11,9 +11,8 @@ max_exceeded: silent
 
 trigger:
   platform: state
-  entity_id: input_boolean.back_door_august_lock
-  from: "on"
-  to: "off"
+  entity_id: lock.back_door
+  to: "unlocked"
 
 condition:
   - condition: template

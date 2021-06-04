@@ -19,9 +19,6 @@ homekit:
     include_entities: !include_dir_merge_list ./homekit
 
 input_boolean:
-  backdoor_august_lock:
-    name: Back Door August Lock
-    icon: mdi:home-lock 
   person_arrives:
     name: Person Arrives
   last_person_leaves:
