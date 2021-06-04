@@ -9,13 +9,20 @@ mode: parallel
 trigger:
   - platform: state
     entity_id:
-      - person.ryan
-      - person.nicole
-      - person.angeline
-    to: "home"
-  
+      - input_boolean.person_arrives
+    to: "on"
+
+condition:
+  condition: state
+  entity_id: alarm_control_panel.abode_alarm
+  state: "armed_away"
+
 action:
   - alias: "Disarm alarm"
     service: alarm_control_panel.alarm_disarm
     target:
       entity_id: alarm_control_panel.abode_alarm
+  - alias: "Reset helper"
+    service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.person_arrives
