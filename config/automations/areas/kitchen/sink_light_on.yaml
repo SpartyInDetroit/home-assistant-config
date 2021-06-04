@@ -1,0 +1,28 @@
+alias: Kitchen Sink Light On
+description: >-
+  Turn on the kitchen sink light in the evening.
+
+id: 0be8a928-5267-432b-b8a5-5bbfee51c490
+
+mode: single
+
+trigger:
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 4.0
+  
+condition:
+  alias: "Morning"
+  condition: time
+  after: "12:00:00"
+
+action:
+  - alias: "Turn light on"
+    service: light.turn_on
+    target:
+      entity_id:
+        - light.tradfri_bulb
+    data:
+      brightness_pct: 30
+      
