@@ -11,3 +11,4 @@ __pycache__
 
 .storage
 config/custom_components/*
+config/secrets.yaml
