@@ -1,15 +1,15 @@
 alias: Front Door Light On
-description: >-
-  Lock the front door if everyone leaves
+description: Turn on front porch light at dusk.
 
 id: 8d9ac402-3317-444c-8a25-087d982799aa
 
 mode: single
 
 trigger:
-  - platform: sun
-    event: sunset
-    offset: "-00:15:00"
+  - platform: numeric_state
+    entity_id: sun.sun
+    attribute: elevation
+    below: 4
   
 action:
   - alias: "Front door light on"
