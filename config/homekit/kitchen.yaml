@@ -3,5 +3,5 @@
 # List of entities that is exposed to HomeKit/Siri
 # From area: Kitchen
 #
-- binary_sensor.kitchen_window
-- binary_sensor.kitchen_keypad_2
+# - binary_sensor.kitchen_window
+# - binary_sensor.kitchen_keypad_2

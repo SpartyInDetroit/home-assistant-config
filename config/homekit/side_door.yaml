@@ -3,4 +3,4 @@
 # List of entities that is exposed to HomeKit/Siri
 # From area: Side Door
 #
-- binary_sensor.side_door
+# - binary_sensor.side_door

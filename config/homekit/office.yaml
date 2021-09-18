@@ -3,6 +3,6 @@
 # List of entities that is exposed to HomeKit/Siri
 # From area: Office
 #
-- binary_sensor.office_window
-- binary_sensor.back_door
-- binary_sensor.office_motion_sensor
+# - binary_sensor.office_window
+# - binary_sensor.back_door
+# - binary_sensor.office_motion_sensor

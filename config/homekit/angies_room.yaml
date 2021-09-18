@@ -3,5 +3,5 @@
 # List of entities that is exposed to HomeKit/Siri
 # From area: Angie's Room
 #
-- binary_sensor.guest_bedroom_rear_window
-- binary_sensor.guest_bedroom_side_window
+# - binary_sensor.guest_bedroom_rear_window
+# - binary_sensor.guest_bedroom_side_window

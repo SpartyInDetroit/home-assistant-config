@@ -3,6 +3,6 @@
 # List of entities that is exposed to HomeKit/Siri
 # From area: Dining Room
 #
-- binary_sensor.dining_room_front_window
-- binary_sensor.dining_room_side_window
-- binary_sensor.dining_room_motion_sensor
+# - binary_sensor.dining_room_front_window
+# - binary_sensor.dining_room_side_window
+# - binary_sensor.dining_room_motion_sensor
