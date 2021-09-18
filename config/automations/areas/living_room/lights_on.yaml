@@ -1,18 +1,18 @@
-alias: Living Room Lights On
-description: >-
-  Turn living room lights on.
+# alias: Living Room Lights On
+# description: >-
+#   Turn living room lights on.
 
-  Automation is triggered via motion sensor and lights will turn on when it''s night
-  time or there is not enough light outside.
+#   Automation is triggered via motion sensor and lights will turn on when it''s night
+#   time or there is not enough light outside.
 
-  Lights turn off after 5 minutes of no motion.
+#   Lights turn off after 5 minutes of no motion.
 
-id: 8d54d34c-5306-4e60-974e-722fe5136531
+# id: 8d54d34c-5306-4e60-974e-722fe5136531
 
-use_blueprint:
-  path: motion_light.yaml
-  input:
-    motion_entity: binary_sensor.living_room_motion_sensor
-    light_target:
-      entity_id: light.living_room_lights
-    no_motion_wait: 300
+# use_blueprint:
+#   path: motion_light.yaml
+#   input:
+#     motion_entity: binary_sensor.living_room_motion_sensor
+#     light_target:
+#       entity_id: light.living_room_lights
+#     no_motion_wait: 300

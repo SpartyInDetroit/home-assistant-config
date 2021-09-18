@@ -1,23 +1,23 @@
-alias: Alarm Away
-description: >-
-  Arm the alarm when everyone leaves.
+# alias: Alarm Away
+# description: >-
+#   Arm the alarm when everyone leaves.
 
-id: 8f0ae849-1e51-4976-ba1f-0fe09bdeaf4a
+# id: 8f0ae849-1e51-4976-ba1f-0fe09bdeaf4a
 
-mode: single
+# mode: single
 
-trigger:
-  - platform: state
-    entity_id: input_boolean.last_person_leaves
-    to: "on"
+# trigger:
+#   - platform: state
+#     entity_id: input_boolean.last_person_leaves
+#     to: "on"
   
-action:
-  - alias: "Arm alarm"
-    service: alarm_control_panel.alarm_arm_away
-    target:
-      entity_id: alarm_control_panel.abode_alarm
-  - alias: "Reset helper"
-    service: input_boolean.turn_off
-    target:
-      entity_id: input_boolean.last_person_leaves  
+# action:
+#   - alias: "Arm alarm"
+#     service: alarm_control_panel.alarm_arm_away
+#     target:
+#       entity_id: alarm_control_panel.abode_alarm
+#   - alias: "Reset helper"
+#     service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.last_person_leaves  
       

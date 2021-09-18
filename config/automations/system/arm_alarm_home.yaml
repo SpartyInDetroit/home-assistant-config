@@ -1,29 +1,29 @@
-alias: Alarm Home
-description: >-
-  Arm the alarm at 11 pm if someone is home.
+# alias: Alarm Home
+# description: >-
+#   Arm the alarm at 11 pm if someone is home.
 
-id: 486d3290-7f6e-4fe7-a3a3-0e45988fec0f
+# id: 486d3290-7f6e-4fe7-a3a3-0e45988fec0f
 
-mode: single
+# mode: single
 
-trigger:
-  - platform: time
-    at: "23:00:00"
+# trigger:
+#   - platform: time
+#     at: "23:00:00"
 
-condition:
-  alias: "Everyone is NOT away (someone is home)"
-  condition: not
-  conditions:
-    - condition: state
-      entity_id:
-        - person.ryan
-        - person.nicole
-        - person.angeline
-      state: "away"
+# condition:
+#   alias: "Everyone is NOT away (someone is home)"
+#   condition: not
+#   conditions:
+#     - condition: state
+#       entity_id:
+#         - person.ryan
+#         - person.nicole
+#         - person.angeline
+#       state: "away"
   
-action:
-  - alias: "Set alarm to 'home'"
-    service: alarm_control_panel.alarm_arm_home
-    target:
-      entity_id: alarm_control_panel.abode_alarm
+# action:
+#   - alias: "Set alarm to 'home'"
+#     service: alarm_control_panel.alarm_arm_home
+#     target:
+#       entity_id: alarm_control_panel.abode_alarm
       

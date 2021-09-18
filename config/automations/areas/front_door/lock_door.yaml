@@ -1,12 +1,12 @@
-alias: Front Door Lock
-description: >-
-  Lock the front door if it remains closed for 30 seconds
+# alias: Front Door Lock
+# description: >-
+#   Lock the front door if it remains closed for 30 seconds
 
-id: fcf890ea-ed16-4da6-b586-6084b10c2266
+# id: fcf890ea-ed16-4da6-b586-6084b10c2266
 
-use_blueprint:
-  path: close_door_lock.yaml
-  input:
-    contact_sensor: binary_sensor.front_door
-    door_lock: lock.front_door
-    wait_time: 30
+# use_blueprint:
+#   path: close_door_lock.yaml
+#   input:
+#     contact_sensor: binary_sensor.front_door
+#     door_lock: lock.front_door
+#     wait_time: 30

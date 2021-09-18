@@ -1,30 +1,30 @@
-alias: Backyard Lights On
-description: >-
-  Turn back door light and string lights.
+# alias: Backyard Lights On
+# description: >-
+#   Turn back door light and string lights.
 
-  Automation is triggered when back door is unlocked.
+#   Automation is triggered when back door is unlocked.
 
-id: 4fbef712-ad3e-4233-bad6-6d441465f1c0
+# id: 4fbef712-ad3e-4233-bad6-6d441465f1c0
 
-mode: restart
-max_exceeded: silent
+# mode: restart
+# max_exceeded: silent
 
-trigger:
-  platform: state
-  entity_id: lock.back_door
-  to: "unlocked"
+# trigger:
+#   platform: state
+#   entity_id: lock.back_door
+#   to: "unlocked"
 
-condition:
-  - condition: template
-    alias: "Sun down"
-    value_template: "{{ state_attr('sun.sun', 'elevation') < 4 }}"
+# condition:
+#   - condition: template
+#     alias: "Sun down"
+#     value_template: "{{ state_attr('sun.sun', 'elevation') < 4 }}"
 
-action:
-  - alias: "Turn on back door light"
-    service: light.turn_on
-    target:
-      entity_id: light.back_door_light
-  - alias: "Turn on string lights"
-    service: switch.turn_on
-    target:
-      entity_id: switch.outdoor_switch_00601737
+# action:
+#   - alias: "Turn on back door light"
+#     service: light.turn_on
+#     target:
+#       entity_id: light.back_door_light
+#   - alias: "Turn on string lights"
+#     service: switch.turn_on
+#     target:
+#       entity_id: switch.outdoor_switch_00601737

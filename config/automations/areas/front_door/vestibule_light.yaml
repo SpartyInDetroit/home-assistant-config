@@ -1,39 +1,39 @@
-alias: Front Door Vestibule Light On/Off
-description: >-
-  Turn on light when door unlocks.
+# alias: Front Door Vestibule Light On/Off
+# description: >-
+#   Turn on light when door unlocks.
 
-  When door locks, wait 1 minute to turn off the inside light.
+#   When door locks, wait 1 minute to turn off the inside light.
 
-  Automation is triggered when back door is unlocked.
+#   Automation is triggered when back door is unlocked.
 
-id: 5e989496-8f77-4807-b32b-0dd6a8cbffd0
+# id: 5e989496-8f77-4807-b32b-0dd6a8cbffd0
 
-mode: restart
-max_exceeded: silent
+# mode: restart
+# max_exceeded: silent
 
-trigger:
-  platform: state
-  entity_id: lock.front_door
-  to: "unlocked"
+# trigger:
+#   platform: state
+#   entity_id: lock.front_door
+#   to: "unlocked"
 
-condition:
-  condition: template
-  alias: "Sun down"
-  value_template: "{{ state_attr('sun.sun', 'elevation') < 4 }}"
+# condition:
+#   condition: template
+#   alias: "Sun down"
+#   value_template: "{{ state_attr('sun.sun', 'elevation') < 4 }}"
 
-action:
-  - alias: "Turn on lights"
-    service: light.turn_on
-    target:
-      entity_id: light.front_vestibule_light
-  - alias: "Wait until door locks"
-    wait_for_trigger:
-      - platform: state
-        entity_id: lock.front_door
-        to: "locked"
-  - delay:
-      minutes: 1
-  - alias: "Turn off inside light"
-    service: light.turn_off
-    target:
-      entity_id: light.front_vestibule_light
+# action:
+#   - alias: "Turn on lights"
+#     service: light.turn_on
+#     target:
+#       entity_id: light.front_vestibule_light
+#   - alias: "Wait until door locks"
+#     wait_for_trigger:
+#       - platform: state
+#         entity_id: lock.front_door
+#         to: "locked"
+#   - delay:
+#       minutes: 1
+#   - alias: "Turn off inside light"
+#     service: light.turn_off
+#     target:
+#       entity_id: light.front_vestibule_light

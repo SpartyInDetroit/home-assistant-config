@@ -1,26 +1,26 @@
-alias: Kitchen Sink Light Off
-description: >-
-  Turn on the kitchen sink light in the evening.
+# alias: Kitchen Sink Light Off
+# description: >-
+#   Turn on the kitchen sink light in the evening.
 
-id: 8d6fca2a-f677-4efb-b850-d58b75ee0aed
+# id: 8d6fca2a-f677-4efb-b850-d58b75ee0aed
 
-mode: single
+# mode: single
 
-trigger:
-  - platform: numeric_state
-    entity_id: sun.sun
-    attribute: elevation
-    below: 4.0
+# trigger:
+#   - platform: numeric_state
+#     entity_id: sun.sun
+#     attribute: elevation
+#     below: 4.0
   
-condition:
-  alias: "Morning"
-  condition: time
-  before: "12:00:00"
+# condition:
+#   alias: "Morning"
+#   condition: time
+#   before: "12:00:00"
 
-action:
-  - alias: "Turn light off"
-    service: light.turn_off
-    target:
-      entity_id:
-        - light.tradfri_bulb
+# action:
+#   - alias: "Turn light off"
+#     service: light.turn_off
+#     target:
+#       entity_id:
+#         - light.tradfri_bulb
       

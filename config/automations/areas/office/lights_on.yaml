@@ -1,18 +1,18 @@
-alias: Office Lights On
-description: >-
-  Turn office lights on.
+# alias: Office Lights On
+# description: >-
+#   Turn office lights on.
 
-  Automation is triggered via motion sensor and lights will turn on when it''s night
-  time or there is not enough light outside.
+#   Automation is triggered via motion sensor and lights will turn on when it''s night
+#   time or there is not enough light outside.
 
-  Lights turn off after 5 minutes of no motion.
+#   Lights turn off after 5 minutes of no motion.
 
-id: a0ca954a-244c-4fe7-b829-be11ec51791b
+# id: a0ca954a-244c-4fe7-b829-be11ec51791b
 
-use_blueprint:
-  path: motion_light.yaml
-  input:
-    motion_entity: binary_sensor.office_motion_sensor
-    light_target:
-      entity_id: light.office_lights
-    no_motion_wait: 300
+# use_blueprint:
+#   path: motion_light.yaml
+#   input:
+#     motion_entity: binary_sensor.office_motion_sensor
+#     light_target:
+#       entity_id: light.office_lights
+#     no_motion_wait: 300

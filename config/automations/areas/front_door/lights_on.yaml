@@ -1,18 +1,18 @@
-alias: Front Door Light On
-description: Turn on front porch light at dusk.
+# alias: Front Door Light On
+# description: Turn on front porch light at dusk.
 
-id: 8d9ac402-3317-444c-8a25-087d982799aa
+# id: 8d9ac402-3317-444c-8a25-087d982799aa
 
-mode: single
+# mode: single
 
-trigger:
-  - platform: numeric_state
-    entity_id: sun.sun
-    attribute: elevation
-    below: 4
+# trigger:
+#   - platform: numeric_state
+#     entity_id: sun.sun
+#     attribute: elevation
+#     below: 4
   
-action:
-  - alias: "Front door light on"
-    service: light.turn_on
-    target:
-      entity_id: light.front_door_light
+# action:
+#   - alias: "Front door light on"
+#     service: light.turn_on
+#     target:
+#       entity_id: light.front_door_light

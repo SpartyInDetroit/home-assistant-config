@@ -1,31 +1,31 @@
-alias: Back Door Lock
-description: >-
-  Lock the back door if it remains closed for 5 minutes
-  between the hours of 11pm to 8am.
+# alias: Back Door Lock
+# description: >-
+#   Lock the back door if it remains closed for 5 minutes
+#   between the hours of 11pm to 8am.
 
-  Also locks the door at 11pm.
+#   Also locks the door at 11pm.
 
-id: 8f79a5f6-ea6b-4e49-bcd2-647f0791677e
+# id: 8f79a5f6-ea6b-4e49-bcd2-647f0791677e
 
-mode: restart
+# mode: restart
 
-trigger:
-  - platform: state
-    entity_id: binary_sensor.back_door
-    from: "on"
-    to: "off"
-    for: 300
-  - platform: time
-    at: "23:00:00"
+# trigger:
+#   - platform: state
+#     entity_id: binary_sensor.back_door
+#     from: "on"
+#     to: "off"
+#     for: 300
+#   - platform: time
+#     at: "23:00:00"
 
-condition:
-  alias: "From 11pm to 8am"
-  condition: time
-  after: "23:00:00"
-  before: "08:00:00"
+# condition:
+#   alias: "From 11pm to 8am"
+#   condition: time
+#   after: "23:00:00"
+#   before: "08:00:00"
 
-action:
-  - alias: "Lock the door"
-    service: lock.lock
-    target:
-      entity_id: lock.back_door
+# action:
+#   - alias: "Lock the door"
+#     service: lock.lock
+#     target:
+#       entity_id: lock.back_door

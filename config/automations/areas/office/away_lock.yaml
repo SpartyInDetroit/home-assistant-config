@@ -1,23 +1,23 @@
-alias: Back Door Away Lock
-description: >-
-  Lock the front door if everyone leaves
+# alias: Back Door Away Lock
+# description: >-
+#   Lock the front door if everyone leaves
 
-id: 3e1b1531-d9ad-44d6-a94f-fb72c90b2442
+# id: 3e1b1531-d9ad-44d6-a94f-fb72c90b2442
 
-mode: single
+# mode: single
 
-trigger:
-  - platform: state
-    entity_id: input_boolean.last_person_leaves
-    to: "on"
+# trigger:
+#   - platform: state
+#     entity_id: input_boolean.last_person_leaves
+#     to: "on"
   
-action:
-  - alias: "Lock door"
-    service: lock.lock
-    target:
-      entity_id: lock.back_door
-  - alias: "Reset helper"
-    service: input_boolean.turn_off
-    target:
-      entity_id: input_boolean.last_person_leaves   
+# action:
+#   - alias: "Lock door"
+#     service: lock.lock
+#     target:
+#       entity_id: lock.back_door
+#   - alias: "Reset helper"
+#     service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.last_person_leaves   
       

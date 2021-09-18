@@ -1,12 +1,12 @@
-alias: Side Door Lock
-description: >-
-  Lock the side door if it remains closed for 30 seconds
+# alias: Side Door Lock
+# description: >-
+#   Lock the side door if it remains closed for 30 seconds
 
-id: f9817f0d-072e-4dfa-b700-7f54c6039b8c
+# id: f9817f0d-072e-4dfa-b700-7f54c6039b8c
 
-use_blueprint:
-  path: close_door_lock.yaml
-  input:
-    contact_sensor: binary_sensor.side_door
-    door_lock: lock.side_door
-    wait_time: 60
+# use_blueprint:
+#   path: close_door_lock.yaml
+#   input:
+#     contact_sensor: binary_sensor.side_door
+#     door_lock: lock.side_door
+#     wait_time: 60

@@ -1,28 +1,28 @@
-alias: Alarm Disarm
-description: >-
-  Disarm the alarm when someone comes home.
+# alias: Alarm Disarm
+# description: >-
+#   Disarm the alarm when someone comes home.
 
-id: 3a4c5d50-633d-49f2-8421-a65c6035aff0
+# id: 3a4c5d50-633d-49f2-8421-a65c6035aff0
 
-mode: parallel
+# mode: parallel
 
-trigger:
-  - platform: state
-    entity_id:
-      - input_boolean.person_arrives
-    to: "on"
+# trigger:
+#   - platform: state
+#     entity_id:
+#       - input_boolean.person_arrives
+#     to: "on"
 
-condition:
-  condition: state
-  entity_id: alarm_control_panel.abode_alarm
-  state: "armed_away"
+# condition:
+#   condition: state
+#   entity_id: alarm_control_panel.abode_alarm
+#   state: "armed_away"
 
-action:
-  - alias: "Disarm alarm"
-    service: alarm_control_panel.alarm_disarm
-    target:
-      entity_id: alarm_control_panel.abode_alarm
-  - alias: "Reset helper"
-    service: input_boolean.turn_off
-    target:
-      entity_id: input_boolean.person_arrives
+# action:
+#   - alias: "Disarm alarm"
+#     service: alarm_control_panel.alarm_disarm
+#     target:
+#       entity_id: alarm_control_panel.abode_alarm
+#   - alias: "Reset helper"
+#     service: input_boolean.turn_off
+#     target:
+#       entity_id: input_boolean.person_arrives
