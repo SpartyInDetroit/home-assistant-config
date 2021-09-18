@@ -24,23 +24,23 @@ input_boolean:
   last_person_leaves:
     name: Last Person Leaves
 
-light:
-  - platform: group
-    name: Living Room Lights
-    entities:
-      - light.living_room_light_1
-      - light.living_room_light_2
-      - light.living_room_light_3
-      - light.living_room_light_4
-  - platform: group
-    name: Dining Room Lights
-    entities:
-      - light.dining_room_light_1
-      - light.dining_room_light_2
-      - light.dining_room_light_3
-  - platform: group
-    name: Office Lights
-    entities:
-      - light.office_ceiling_light
-      - light.office_lamp
+# light:
+#   - platform: group
+#     name: Living Room Lights
+#     entities:
+#       - light.living_room_light_1
+#       - light.living_room_light_2
+#       - light.living_room_light_3
+#       - light.living_room_light_4
+#   - platform: group
+#     name: Dining Room Lights
+#     entities:
+#       - light.dining_room_light_1
+#       - light.dining_room_light_2
+#       - light.dining_room_light_3
+#   - platform: group
+#     name: Office Lights
+#     entities:
+#       - light.office_ceiling_light
+#       - light.office_lamp
 
